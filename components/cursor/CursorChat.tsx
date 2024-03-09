@@ -48,6 +48,7 @@ const CursorChat = ({
               autoFocus={true}
               onChange={handleChange}
               onKeyDown={handleKeyDown}
+              onKeyUp={(e) => e.stopPropagation()}
               placeholder={cursorState.previousMessage ? "" : "Type a message"}
               value={cursorState.message}
               maxLength={50}
