@@ -157,7 +157,7 @@ export default function Page() {
       />
 
       <section className="flex h-full flex-roll">
-        <LeftSidebar />
+        <LeftSidebar allShapes={Array.from(canvasObjects)}/>
         <Live canvasRef={canvasRef} />
         <RightSidebar />
       </section>
