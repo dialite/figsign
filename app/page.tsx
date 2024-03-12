@@ -175,7 +175,9 @@ export default function Page() {
     })
 
     window.addEventListener("resize", () => {
-      handleResize({ fabricRef });
+      handleResize({
+        canvas: fabricRef.current,
+      });
     });
 
     window.addEventListener("keydown", (e: any) => {
@@ -208,7 +210,9 @@ export default function Page() {
         activeElement={activeElement}
         handleActiveElement={handleActiveElement}
         imageInputRef={imageInputRef}
-        handleImageUpload={(e: any) => {e.stopPropagation()
+        handleImageUpload={(e: any) => {
+          e.stopPropagation()
+
           handleImageUpload({
             file: e.target.files[0],
             canvas: fabricRef as any,
