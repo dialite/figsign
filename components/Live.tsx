@@ -22,9 +22,11 @@ import { shortcuts } from "@/constants";
 
 type Props = {
   canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;
+  undo: () => void
+  redo: () => void
 };
 
-const Live = ({ canvasRef }: Props) => {
+const Live = ({ canvasRef, undo, redo }: Props) => {
   const others = useOthers();
   const [{ cursor }, updateMyPresence] = useMyPresence() as any;
 
@@ -165,6 +167,31 @@ const Live = ({ canvasRef }: Props) => {
     });
   }, []);
 
+  const handleContextMenuClick = useCallback((key: string) => {
+    switch(key) {
+      case "Chat":
+        setCursorState({
+          mode: CursorMode.Chat,
+          previousMessage: null,
+          message: ""
+        })
+        break
+      case "Undo":
+        undo()
+        break
+      case "Redo":
+        redo()
+        break
+      case "Reactions":
+        setCursorState({
+          mode: CursorMode.ReactionSelector
+        })
+        break
+      default:
+        break
+    }
+  }, [])
+
   return (
     <ContextMenu>
       <ContextMenuTrigger
@@ -207,7 +234,7 @@ const Live = ({ canvasRef }: Props) => {
 
       <ContextMenuContent className="right-menu-content">
           {shortcuts.map((item) => (
-            <ContextMenuItem key={item.key}>
+            <ContextMenuItem key={item.key} onClick={() => handleContextMenuClick(item.name)} className="right-menu-item">
               <p>{item.name}</p>
               <p className="text-xs text-primary-grey-300">{item.shortcut}</p>
             </ContextMenuItem>
