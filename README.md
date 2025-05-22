@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎨 Figsign – Figma-like Collaborative Design Tool
 
-## Getting Started
+[![Live Site](https://img.shields.io/badge/Live%20Demo-figsign.vercel.app-blue?style=for-the-badge&logo=vercel)](https://figsign.vercel.app/)
+[![Source Code](https://img.shields.io/badge/GitHub-Source%20Code-black?style=for-the-badge&logo=github)](https://github.com/dialite/figsign.git)
 
-First, run the development server:
+**Figsign** is a collaborative, real-time, web-based design platform inspired by Figma. It offers canvas-based editing, live multiplayer collaboration, contextual comments, export to PDF, and a clean, responsive interface — built with cutting-edge web technologies.
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#overview)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture & Core Tools](#architecture--core-tools)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+- [Scripts](#scripts)
+- [License](#license)
+
+---
+
+## 🔍 Overview
+
+**Figsign** recreates the core collaborative design experience of tools like Figma with:
+
+- Canvas editing using `Fabric.js`
+- Real-time collaboration using `Liveblocks`
+- Contextual commenting
+- Export to PDF
+- Beautiful UI powered by Tailwind and Radix UI
+
+> Designed for developers, designers, and teams to brainstorm, create, and communicate visually — right in the browser.
+
+---
+
+## 🌐 Live Demo
+
+🔗 [**Try It Now**](https://figsign.vercel.app/)  
+🔗 [**Source Code on GitHub**](https://github.com/dialite/figsign.git)
+
+---
+
+## ✨ Features
+
+- 🖼️ Canvas drawing with `Fabric.js` (shapes, text, images, drag/resize)
+- 👥 Real-time collaboration with presence syncing (`Liveblocks`)
+- 💬 Inline comments and discussion threads
+- 📤 Export designs to PDF (`jsPDF`)
+- ⚡ Context-aware menus and dropdowns (`Radix UI`)
+- 🎨 Tailwind-powered custom UI styling
+- 🌘 Dark mode ready (via Tailwind variants)
+- 🧠 Class variant utilities (`clsx`, `cva`)
+- ⚙️ Type-safe development with TypeScript
+- 📱 Mobile-responsive design
+- 🧩 Modular & scalable component architecture
+
+---
+
+## 🛠️ Tech Stack
+
+| Category          | Technology                                     |
+| ----------------- | ---------------------------------------------- |
+| Framework         | [Next.js 14](https://nextjs.org/)              |
+| Language          | TypeScript                                     |
+| Styling           | Tailwind CSS, Tailwind Merge, Tailwind Animate |
+| Canvas            | [Fabric.js](http://fabricjs.com/)              |
+| Collaboration     | [Liveblocks](https://liveblocks.io/)           |
+| PDF Export        | [jsPDF](https://github.com/parallax/jsPDF)     |
+| UI Components     | [Radix UI](https://www.radix-ui.com/)          |
+| Icons             | [Lucide React](https://lucide.dev/)            |
+| Utility Libraries | clsx, class-variance-authority, uuid           |
+| Package Manager   | pnpm (preferred) or npm                        |
+
+---
+
+## 🧩 Architecture & Core Tools
+
+### 🧑‍🤝‍🧑 Live Collaboration
+
+- **Liveblocks** handles:
+  - Real-time presence (cursor and selection sharing)
+  - Shared document state
+  - Inline comments with `@liveblocks/react-comments`
+
+### 🧰 Drawing & Editing
+
+- **Fabric.js** powers a performant, interactive HTML5 canvas.
+- Objects can be selected, transformed, styled, or deleted.
+
+### 🧠 UI System
+
+- Built with `Tailwind CSS`, `clsx`, `cva`, and Radix primitives
+- Context Menu, Dropdowns, Select inputs, Labels, etc.
+
+### 📄 Export & Document Management
+
+- Designs can be exported as PDFs via `jsPDF`.
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Installation
+
+Clone the repo and install dependencies:
 
 ```bash
-npm run dev
+git clone https://github.com/dialite/figsign.git
+cd figsign
+pnpm install
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

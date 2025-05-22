@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
+import Script from "next/script"; // Import next/script
 import "./globals.css";
-import { Room } from "./Room";
+import { Room } from "./Room"; // Keep the Room component
 
 const workSans = Work_Sans({ 
   subsets: ["latin"],
@@ -21,6 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Web Analytics Tracking Script */}
+        <Script
+          defer
+          data-domain="figsign-2kej7opft-dialites-projects.vercel.app"
+          src="https://web-analytics-gray.vercel.app/tracking-script.js"
+          strategy="afterInteractive" // Ensures script loads after page content is rendered
+        />
+      </head>
       <body className={`${workSans.className} bg-primary-grey-200`}>
         <Room>
           {children}
