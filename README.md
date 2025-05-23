@@ -3,7 +3,7 @@
 [![Live Site](https://img.shields.io/badge/Live%20Demo-figsign.vercel.app-blue?style=for-the-badge&logo=vercel)](https://figsign.vercel.app/)
 [![Source Code](https://img.shields.io/badge/GitHub-Source%20Code-black?style=for-the-badge&logo=github)](https://github.com/dialite/figsign.git)
 
-**Figsign** is a collaborative, real-time, web-based design platform inspired by Figma. It offers canvas-based editing, live multiplayer collaboration, contextual comments, export to PDF, and a clean, responsive interface — built with cutting-edge web technologies.
+**Figsign** is a collaborative, real-time, web-based design platform inspired by Figma. It offers canvas-based editing, live multiplayer collaboration, contextual comments, export to PDF, and a clean, responsive interface — built with cutting-edge web technologies for better user experience.
 
 ---
 
